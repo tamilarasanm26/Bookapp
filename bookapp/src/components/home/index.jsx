@@ -20,7 +20,7 @@ const Home = () => {
   
 
   const searchBook = (e) => {
-    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBo2VdjjoSNMui0V4lDpA8PccA7ks8uf9I')
+    axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyBo2VdjjoSNMui0V4lDpA8PccA7ks8uf9I'+'&maxResults=40')
     .then((res) =>setData(res.data.items))
     .catch(err=>console.log(err))
   };
@@ -42,6 +42,7 @@ const Home = () => {
         </div>
       </div>
       <br />
+      
       <div className='container'>
         {
            <Card book={bookData}/>

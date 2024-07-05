@@ -14,7 +14,7 @@ const Header = () => {
     };
 
     return (
-        <nav className='header-nav'>
+        // <nav className='header-nav'>
             <div className='header-container'>
                 {
                     userLoggedIn
@@ -26,7 +26,7 @@ const Header = () => {
                         </>
                 }
             </div>
-        </nav>
+        // </nav>
     );
 };
 

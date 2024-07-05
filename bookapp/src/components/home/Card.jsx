@@ -1,26 +1,34 @@
-import React from 'react'
+import React from 'react';
 import './home.css';
-function Card({ book }) {
-  console.log(book);
-  return (
+import Model from './Model';
 
+function Card({ book }) {
+  console.log(book)
+  return (
     <>
-      {
-        book.map((item) => {
+      {book.map((item, index) => {
+        let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+        let amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount
+        if(thumbnail!=undefined && amount!=undefined )
+        {
           return (
-            <div className='card'>
-              <img src="https://imgs.search.brave.com/xHR9cpIzAhp0WMZl_r9XjfekhXFXIuFDOUR278kFtus/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9yZWFj/dGpzZXhhbXBsZS5j/b20vY29udGVudC9p/bWFnZXMvMjAxOS8w/NC9SZWFjdC5qcGc" alt="" />
+           <>
+            <div className='card' key={index}>
+              <img src={thumbnail}alt=""/>
               <div>
-                <h3 className='title'>React Js</h3>
-                <p className='amt'>&#8377;3000</p>
+                <h3 className='title'>{item.volumeInfo.title}</h3>
+                <p className='amt'>&#8377;{amount}</p>
               </div>
             </div>
+            
+            <Model/>
+           </>
           )
-        })
-      }
-
+        }
+       
+      })}
     </>
-  )
+  );
 }
 
-export default Card
+export default Card;
