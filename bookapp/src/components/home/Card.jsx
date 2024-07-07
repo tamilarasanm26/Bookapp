@@ -21,7 +21,7 @@ function Card({ book }) {
               </div>
             </div>
             
-            <Model/>
+            {/* <Model/> */}
            </>
           )
         }

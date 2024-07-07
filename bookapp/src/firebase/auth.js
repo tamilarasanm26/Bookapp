@@ -15,13 +15,12 @@ export const doSignInWithGoogle = async() =>{
    const result =  await signInWithPopup(auth,provider);
    //result.user
    return result
-};
+}
 
 
 export const doSignOut = () =>{
    return auth.signOut();
-};
-
+}
 
 // export const doPasswordReset = (email) =>{
 //     return sendPasswordResetEmail(auth,email);
