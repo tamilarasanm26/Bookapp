@@ -3,56 +3,48 @@
 @tailwind components;
 @tailwind utilities;
 
-
 .header-nav {
-    @apply bg-gray-200 border-b z-20 fixed top-0 left-0 w-full;
-  }
-  
-  .header-container {
-    @apply container mx-auto flex flex-row gap-2 h-12 justify-center items-center;
-  }
-  
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.header-nav {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem;
-    width: 100%;
-    z-index: 20;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 3rem;
-    border-bottom: 1px solid #e5e7eb;
-    justify-content: end;
-    align-items: center;
-    background-color: #e5e7eb;
-  }
-  
- 
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
 
-.header-nav {
-    @apply flex flex-row gap-2 w-full z-20 fixed top-0 left-0 h-12 border-b justify-center items-center bg-gray-200;
-  }
-  
-  .header-link,
-  .header-button {
-    @apply text-sm text-blue-600 underline;
-  }
-
-
-  .header-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .btn {
-    @apply px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300;
-  }
-
-  .btn{
-   display: flex;
-  justify-items: flex-start;
+.header-logo a {
+  color: white;
   text-decoration: none;
-  }
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-links {
+  display: flex;
+  gap: 10px;
+}
+
+.header-links .btn {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.header-links .btn:hover {
+  background-color: #555;
+}
+
+.header-links .btn a {
+  color: white;
+  text-decoration: none;
+}
