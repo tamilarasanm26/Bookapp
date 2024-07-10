@@ -19,16 +19,17 @@ const Home = () => {
   const [bookData, setData] = useState([]);
 
   const searchBook = (e) => {
-    axios.get('https://www.googleapis.com/books/v1/volumes?q=' + search + '&key=AIzaSyBo2VdjjoSNMui0V4lDpA8PccA7ks8uf9I' + '&maxResults=40')
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyBo2VdjjoSNMui0V4lDpA8PccA7ks8uf9I&maxResults=40`)
       .then((res) => setData(res.data.items))
       .catch(err => console.log(err));
   };
 
   return (
     <div>
-      <h1 style={{ marginTop: "20px", display: "flex", justifyContent: "center" }} className='wel'>Welcome, {currentUser.displayName || username}</h1>
+      <h1 style={{display:"flex",justifyContent:"center"}} className='wel'>Welcome, {currentUser.displayName || username}</h1>
       <div className='row2'>
-        <div className='search'>
+      </div>
+      <div className='search'>
           <input 
             type="text" 
             value={search} 
@@ -36,9 +37,9 @@ const Home = () => {
             placeholder='Search for a book' 
             className='search-input'
           />
-          <button type='submit' onClick={searchBook} className='search-button'>Search</button>
+          <br></br>
+          <button style={{width:"50%"}}  type='submit' onClick={searchBook} className='search-button'>Search</button>
         </div>
-      </div>
       <br />
       <div className='container'>
         <Card book={bookData} />
