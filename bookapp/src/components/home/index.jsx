@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1 className='wel'>Welcome, {currentUser.displayName || username}</h1>
+      <h1 style={{marginTop:"20px",display:"flex",justifyContent:"center"}} className='wel'>Welcome, {currentUser.displayName || username}</h1>
       {/* Add more content for the home page here */}
       <div className='row2'>
         <div className='search'>
