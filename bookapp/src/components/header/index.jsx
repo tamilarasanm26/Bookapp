@@ -14,19 +14,23 @@ const Header = () => {
     };
 
     return (
-        // <nav className='header-nav'>
+        <nav className='header-nav'>
             <div className='header-container'>
-                {
-                    userLoggedIn
-                        ? <button className='btn' onClick={handleLogout} >Logout</button>
-                        : <>
-                          <button className='btn'>  <Link  to={'/login'}>Login</Link></button>
-
-                           <button className='btn'> <Link  to={'/register'}>Register New Account</Link></button>
+                <div className='nav-left'>
+                    {!userLoggedIn && (
+                        <>
+                            <Link className='btn link-btn' to='/login'>Login</Link>
+                            <Link className='btn link-btn' to='/register'>Register New Account</Link>
                         </>
-                }
+                    )}
+                </div>
+                {userLoggedIn && (
+                    <div className='nav-right'>
+                        <button className='btn logout-btn' onClick={handleLogout}>Logout</button>
+                    </div>
+                )}
             </div>
-        // </nav>
+        </nav>
     );
 };
 

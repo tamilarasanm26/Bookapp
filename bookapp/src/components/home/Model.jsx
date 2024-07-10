@@ -10,8 +10,8 @@ const Model=({show,item,onClose})=>{
     <>
       <div className='overlay'>
         <div className='overlay-inner'>
-          <button className='close' onClick={onClose}>close</button>
           <div className="inner-box">
+          <button className='close' onClick={onClose}>close</button>
             <img
               src={thumbnail}
               alt="" />
