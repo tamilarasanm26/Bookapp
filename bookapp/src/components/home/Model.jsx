@@ -6,6 +6,7 @@ const Model=({show,item,onClose})=>{
     return null;
   }
   let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+  console.log(item);
   return (
     <>
       <div className='overlay'>

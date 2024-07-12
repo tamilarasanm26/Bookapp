@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './card.css';
-import Model from './Model';
 import { auth } from '../../firebase/firebase';
+import GenreCard from './GenreCard';
+import './card.css';
 
 
 function Genre({ genre }) {
@@ -29,6 +29,7 @@ function Genre({ genre }) {
             </div>
             
             {/* <Model show={show} item={bookItem} onClose={()=>setShow(false)}/> */}
+            <GenreCard show={show} item={bookItem} onClose={()=>setShow(false)}/>
            </>
           )
         }
