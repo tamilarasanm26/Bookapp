@@ -16,6 +16,7 @@ const Header = () => {
     return (
         <nav className='header-nav'>
             <div className='header-container'>
+            <h2>BOOK📚APP</h2>
                 <div className='nav-left'>
                     {!userLoggedIn && (
                         <>
@@ -24,11 +25,15 @@ const Header = () => {
                         </>
                     )}
                 </div>
+                <div>
                 {userLoggedIn && (
                     <div className='nav-right'>
                         <button className='btn logout-btn' onClick={handleLogout}>Logout</button>
                     </div>
                 )}
+               
+                </div>
+                
             </div>
         </nav>
     );

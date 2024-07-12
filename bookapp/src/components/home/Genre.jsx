@@ -3,11 +3,12 @@ import './card.css';
 import Model from './Model';
 import { auth } from '../../firebase/firebase';
 
-function Card({ genre }) {
 
+function Genre({ genre }) {
   const [show,setShow] = useState(false);
   const [bookItem,setItem] = useState();
 
+ 
   return (
     <>
       {genre.map((item, index) => {
@@ -26,7 +27,8 @@ function Card({ genre }) {
                 <p className='amt'>&#8377;{amount}</p>
               </div>
             </div>
-              
+            
+            {/* <Model show={show} item={bookItem} onClose={()=>setShow(false)}/> */}
            </>
           )
         }
@@ -36,4 +38,4 @@ function Card({ genre }) {
   );
 }
 
-export default Card;
+export default Genre;

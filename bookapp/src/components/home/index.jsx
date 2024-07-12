@@ -3,6 +3,8 @@ import { useAuth } from '../../contexts/authContext';
 import './home.css';
 import axios from 'axios';
 import Card from './Card';
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
   const { currentUser } = useAuth();
@@ -38,7 +40,10 @@ const Home = () => {
             className='search-input'
           />
           <br></br>
-          <button style={{width:"50%"}}  type='submit' onClick={searchBook} className='search-button'>Search</button>
+          <button style={{width:"30%"}}  type='submit' onClick={searchBook} className='search-button'>Search</button>
+          <br></br>
+          <button style={{width:"30%"}}  type='submit'  className='search-button'><Link to={"/filter"}>Genre</Link></button>
+         
         </div>
       <br />
       <div className='container'>
