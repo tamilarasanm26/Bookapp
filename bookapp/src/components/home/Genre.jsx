@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
-import './card.css';
-import Model from './Model';
 import { auth } from '../../firebase/firebase';
+import GenreCard from './GenreCard';
+import './card.css';
 
-function Card({ book }) {
+
+function Genre({ genre }) {
   const [show,setShow] = useState(false);
   const [bookItem,setItem] = useState();
 
-  
+ 
   return (
     <>
-      {book.map((item, index) => {
+      {genre.map((item, index) => {
         let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
         let amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
         let author = item.volumeInfo.authors && item.volumeInfo.authors;
@@ -27,7 +28,8 @@ function Card({ book }) {
               </div>
             </div>
             
-            <Model show={show} item={bookItem} onClose={()=>setShow(false)}/>
+            {/* <Model show={show} item={bookItem} onClose={()=>setShow(false)}/> */}
+            <GenreCard show={show} item={bookItem} onClose={()=>setShow(false)}/>
            </>
           )
         }
@@ -37,4 +39,4 @@ function Card({ book }) {
   );
 }
 
-export default Card;
+export default Genre;

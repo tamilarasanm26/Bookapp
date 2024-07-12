@@ -6,12 +6,13 @@ const Model=({show,item,onClose})=>{
     return null;
   }
   let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+  console.log(item);
   return (
     <>
       <div className='overlay'>
         <div className='overlay-inner'>
-          <button className='close' onClick={onClose}>close</button>
           <div className="inner-box">
+          <button className='close' onClick={onClose}>close</button>
             <img
               src={thumbnail}
               alt="" />
