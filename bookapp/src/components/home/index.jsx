@@ -2,9 +2,9 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/authContext';
+import './button.css';
 import Card from './Card';
 import './home.css';
-
 
 const Home = () => {
   const { currentUser } = useAuth();
@@ -28,23 +28,26 @@ const Home = () => {
 
   return (
     <div>
-      <h1 style={{display:"flex",justifyContent:"center"}} className='wel'>Welcome, {currentUser.displayName || username}</h1>
+      <div className='top-buttons'>
+        <button className='favorite-button'><Link to="/favorite">Favorite</Link></button>
+
+        {/* <button className='favorite-button'><Link to="/genrefav">Genrefav</Link></button> */}
+        <button className='genre-button'><Link to="/filter">Genre</Link></button>
+      </div>
+      <h1 style={{ display: "flex", justifyContent: "center" }} className='wel'>Welcome, {currentUser.displayName || username}</h1>
       <div className='row2'>
       </div>
       <div className='search'>
-          <input 
-            type="text" 
-            value={search} 
-            onChange={e => setSearch(e.target.value)} 
-            placeholder='Search for a book' 
-            className='search-input'
-          />
-          <br></br>
-          <button style={{width:"30%"}}  type='submit' onClick={searchBook} className='search-button'>Search</button>
-          <br></br>
-          <button style={{width:"30%"}}  type='submit'  className='search-button'><Link to={"/filter"}>Genre</Link></button>
-         
-        </div>
+        <input 
+          type="text" 
+          value={search} 
+          onChange={e => setSearch(e.target.value)} 
+          placeholder='Search for a book' 
+          className='search-input'
+        />
+        <br />
+        <button style={{ width: "30%" }} type='submit' onClick={searchBook} className='search-button'>Search</button>
+      </div>
       <br />
       <div className='container'>
         <Card book={bookData} />

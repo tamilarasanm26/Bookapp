@@ -8,7 +8,6 @@ function Genre({ genre }) {
   const [show,setShow] = useState(false);
   const [bookItem,setItem] = useState();
 
- 
   return (
     <>
       {genre.map((item, index) => {
