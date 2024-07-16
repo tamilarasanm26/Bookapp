@@ -25,7 +25,7 @@
     background-color: #0056b3;
   }
   
-  /* Mobile view */
+  
   @media (max-width: 600px) {
     .favorite-button,
     .genre-button {
