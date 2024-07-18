@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const Favorite = require('../models/Favorite');
+const Favorite = require('../models/favorite');
 
 // Route to add a favorite item
 router.post('/favorites', async (req, res) => {
-  const { title, authors, publisher, publishedDate, description, previewLink, thumbnail } = req.body;
+  const { title, authors, publisher, publishedDate, description, previewLink, thumbnail,user } = req.body;
 
   const favorite = new Favorite({
     title,
@@ -13,7 +13,8 @@ router.post('/favorites', async (req, res) => {
     publishedDate,
     description,
     previewLink,
-    thumbnail
+    thumbnail,
+    user
   });
 
   try {
