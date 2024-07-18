@@ -1,8 +1,12 @@
 import React from 'react';
 import './home.css';
 import axios from 'axios';
-
+import { useAuth } from '../../contexts/authContext';
 const Model = ({ show, item, onClose }) => {
+  const { currentUser } = useAuth();
+  const email = currentUser.email;
+  const username = email.substring(0, email.indexOf('@'));
+
   if (!show) {
     return null;
   }
@@ -18,6 +22,7 @@ const Model = ({ show, item, onClose }) => {
       publishedDate: item.volumeInfo.publishedDate,
       description: item.volumeInfo.description,
       previewLink: item.volumeInfo.previewLink,
+      user:  username,
       thumbnail: thumbnail
     };
 

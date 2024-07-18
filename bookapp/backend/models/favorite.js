@@ -7,7 +7,8 @@ const favoriteSchema = new mongoose.Schema({
   publishedDate: { type: String },
   description: { type: String },
   previewLink: { type: String },
-  thumbnail: { type: String }
+  thumbnail: { type: String },
+  user: {type:String}
 });
 
 module.exports = mongoose.model('Favorite', favoriteSchema);
