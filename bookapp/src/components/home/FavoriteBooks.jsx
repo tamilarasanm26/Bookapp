@@ -32,7 +32,7 @@ const FavoriteBooks = () => {
                 <p>{book.description}</p>
                 <a href={book.previewLink} target='_blank' rel='noopener noreferrer'>More Info</a>
                 <p><i>Added to favorite by </i>{book.user}</p>
-                <button >Delete</button>
+                <button >Delet</button>
               </div>
             </div>
           ))}
