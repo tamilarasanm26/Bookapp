@@ -27,8 +27,9 @@ router.post('/favorites', async (req, res) => {
 
 // Route to get all favorite items
 router.get('/favorites', async (req, res) => {
+  const { username } = req.query;
   try {
-    const favorites = await Favorite.find();
+    const favorites = await Favorite.find({ user: username });
     res.json(favorites);
   } catch (error) {
     res.status(500).json({ message: error.message });

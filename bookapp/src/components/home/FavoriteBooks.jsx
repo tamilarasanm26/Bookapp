@@ -11,14 +11,14 @@ const FavoriteBooks = () => {
 
   useEffect(() => {
     // Fetch favorite books from the server
-    axios.get('http://localhost:5000/api/favorites')
+    axios.get(`http://localhost:5000/api/favorites?username=${username}`)
       .then(response => {
         setFavoriteBooks(response.data);
       })
       .catch(error => {
         console.error('Error fetching favorite books:', error);
       });
-  }, []);
+  }, [username]);
 
   const handleDelete = (id) => {
     axios.delete(`http://localhost:5000/api/favorites/${id}`, { data: { username } })
@@ -26,17 +26,12 @@ const FavoriteBooks = () => {
         setFavoriteBooks(favoriteBooks.filter(book => book._id !== id));
       })
       .catch(error => {
-        if (error.response && error.response.status === 403) {
-          alert('Cannot delete: Not authorized to delete this favorite');
-        } else {
-          console.error('Error deleting favorite book:', error);
-        }
+        console.error('Error deleting favorite book:', error);
       });
   };
 
   return (
     <div className='favorite-books'>
-      
       <h2>Favorite Books</h2>
       {favoriteBooks.length === 0 ? (
         <p>No favorite books found.</p>
