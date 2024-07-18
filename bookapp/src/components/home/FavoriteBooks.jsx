@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './home.css';
+import { useAuth } from '../../contexts/authContext';
 
 const FavoriteBooks = () => {
   const [favoriteBooks, setFavoriteBooks] = useState([]);
+  const { currentUser } = useAuth();
+  const email = currentUser.email;
+  const username = email.substring(0, email.indexOf('@'));
 
   useEffect(() => {
     // Fetch favorite books from the server
@@ -16,8 +20,23 @@ const FavoriteBooks = () => {
       });
   }, []);
 
+  const handleDelete = (id) => {
+    axios.delete(`http://localhost:5000/api/favorites/${id}`, { data: { username } })
+      .then(response => {
+        setFavoriteBooks(favoriteBooks.filter(book => book._id !== id));
+      })
+      .catch(error => {
+        if (error.response && error.response.status === 403) {
+          alert('Cannot delete: Not authorized to delete this favorite');
+        } else {
+          console.error('Error deleting favorite book:', error);
+        }
+      });
+  };
+
   return (
     <div className='favorite-books'>
+      
       <h2>Favorite Books</h2>
       {favoriteBooks.length === 0 ? (
         <p>No favorite books found.</p>
@@ -32,7 +51,7 @@ const FavoriteBooks = () => {
                 <p>{book.description}</p>
                 <a href={book.previewLink} target='_blank' rel='noopener noreferrer'>More Info</a>
                 <p><i>Added to favorite by </i>{book.user}</p>
-                <button >Delet</button>
+                <button onClick={() => handleDelete(book._id)}>Delete</button>
               </div>
             </div>
           ))}
