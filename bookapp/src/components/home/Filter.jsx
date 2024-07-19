@@ -8,8 +8,11 @@ const Filter = () => {
   const [search, setSearch] = useState("");
   const [genreData, setGenre] = useState([]);
 
+
+  const apiKey = import.meta.env.VITE_API_KEY;
+
   const searchGenre = (e) => {
-    axios.get(`https://www.googleapis.com/books/v1/volumes?q=categories=${search}&key=AIzaSyBo2VdjjoSNMui0V4lDpA8PccA7ks8uf9I&maxResults=40`)
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=categories=${search}&key=${apiKey}&maxResults=40`)
       .then((res) => setGenre(res.data.items))
       .catch(err => console.log(err));
   };
