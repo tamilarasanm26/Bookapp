@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 // Database connection
-mongoose.connect("mongodb://127.0.0.1:27017/Book", { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect("mongodb+srv://tamilarasan:tamilarasanm.2631@cluster0.g5a2mwl.mongodb.net/Book", { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Could not connect to MongoDB', err));
 

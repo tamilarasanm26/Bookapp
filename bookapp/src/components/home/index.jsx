@@ -19,9 +19,12 @@ const Home = () => {
 
   const [search, setSearch] = useState("");
   const [bookData, setData] = useState([]);
-
-  const searchBook = (e) => {
-    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyBo2VdjjoSNMui0V4lDpA8PccA7ks8uf9I&maxResults=40`)
+  
+  // Reference the API key from the .env file
+  const apiKey = import.meta.env.VITE_API_KEY;
+  
+  const searchBook = () => {
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${apiKey}&maxResults=40`)
       .then((res) => setData(res.data.items))
       .catch(err => console.log(err));
   };
@@ -30,13 +33,10 @@ const Home = () => {
     <div>
       <div className='top-buttons'>
         <button className='favorite-button'><Link to="/favorite">Favorite</Link></button>
-
-        {/* <button className='favorite-button'><Link to="/genrefav">Genrefav</Link></button> */}
         <button className='genre-button'><Link to="/filter">Genre</Link></button>
       </div>
       <h1 style={{ display: "flex", justifyContent: "center" }} className='wel'>Welcome, {currentUser.displayName || username}</h1>
-      <div className='row2'>
-      </div>
+      <div className='row2'></div>
       <div className='search'>
         <input 
           type="text" 
@@ -55,4 +55,5 @@ const Home = () => {
     </div>
   );
 };
+
 export default Home;
