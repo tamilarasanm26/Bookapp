@@ -26,7 +26,7 @@ const Model = ({ show, item, onClose }) => {
       thumbnail: thumbnail
     };
 
-    axios.post('http://localhost:5000/api/favorites', favoriteData)
+    axios.post('https://bookapp-qfuf.onrender.com/api/favorites', favoriteData)
       .then(response => {
         console.log('Favorite added:', response.data);
       })

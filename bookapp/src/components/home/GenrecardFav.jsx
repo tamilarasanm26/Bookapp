@@ -7,7 +7,7 @@ const GenrecardFav = () => {
 
   useEffect(() => {
     // Fetch favorite books from the server
-    axios.get('http://localhost:5000/fav')
+    axios.get('https://bookapp-qfuf.onrender.com/fav')
       .then(response => {
         setFavoriteBooks(response.data);
       })

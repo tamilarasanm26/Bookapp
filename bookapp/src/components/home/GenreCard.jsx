@@ -17,7 +17,7 @@ const GenreCard = ({ show, item, onClose }) => {
 
   const handleFavoriteClick = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/fav', {
+      const response = await axios.post('https://bookapp-qfuf.onrender.com/fav', {
         title: item.volumeInfo.title,
         author: item.volumeInfo.authors,
         thumbnail: thumbnail,

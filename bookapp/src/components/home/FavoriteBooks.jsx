@@ -11,7 +11,7 @@ const FavoriteBooks = () => {
 
   useEffect(() => {
     // Fetch favorite books from the server
-    axios.get(`http://localhost:5000/api/favorites?username=${username}`)
+    axios.get(`https://bookapp-qfuf.onrender.com/api/favorites?username=${username}`)
       .then(response => {
         setFavoriteBooks(response.data);
       })
@@ -21,7 +21,7 @@ const FavoriteBooks = () => {
   }, [username]);
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/favorites/${id}`, { data: { username } })
+    axios.delete(`https://bookapp-qfuf.onrender.com/api/favorites/${id}`, { data: { username } })
       .then(response => {
         setFavoriteBooks(favoriteBooks.filter(book => book._id !== id));
       })
