@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './home.css';
+import './card.css';
 
 const GenrecardFav = () => {
   const [favoriteBooks, setFavoriteBooks] = useState([]);
@@ -29,7 +29,7 @@ const GenrecardFav = () => {
               <div className='book-info'>
                 <h3>{book.title}</h3>
                 <h4>{book.authors.join(', ')}</h4>
-                <p>{book.description}</p>
+                {/* <p>{book.description}</p> */}
                 <a href={book.previewLink} target='_blank' rel='noopener noreferrer'>More Info</a>
               </div>
             </div>

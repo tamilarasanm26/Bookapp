@@ -1,20 +1,21 @@
-// routes/genre.js
-
 const express = require('express');
 const router = express.Router();
 const Genre = require('../models/genre');
 
 // POST route to save a favorite book
 router.post('/fav', async (req, res) => {
-  const { title, author, thumbnail, description } = req.body;
+  const { title, author, thumbnail, description, user,publishedDate } = req.body;
 
+
+ const newFavorite = new Genre({
+   title,
+   author,
+   thumbnail,
+   description,
+   user,
+   publishedDate
+ });
   try {
-    const newFavorite = new Genre({
-      title,
-      author,
-      thumbnail,
-      description,
-    });
 
     const savedFavorite = await newFavorite.save();
     res.status(201).json(savedFavorite);
@@ -23,10 +24,10 @@ router.post('/fav', async (req, res) => {
   }
 });
 
-
 router.get('/fav', async (req, res) => {
+  const { username } = req.query;
   try {
-    const favorites = await Genre.find();
+    const favorites = await Genre.find({ user: username });
     res.json(favorites);
   } catch (error) {
     res.status(500).json({ message: error.message });

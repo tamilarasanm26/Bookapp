@@ -24,10 +24,10 @@ const GenreCard = ({ show, item, onClose }) => {
         description: item.volumeInfo.description,
       });
       console.log('Favorite saved:', response.data);
-      // Optionally, you can add logic to indicate success or update UI
+    
     } catch (error) {
       console.error('Error saving favorite:', error);
-      // Handle error
+      
     }
   };
 
