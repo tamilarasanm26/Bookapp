@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Genre = require('../models/genre');
 
-// POST route to save a favorite book
+
 router.post('/fav', async (req, res) => {
   const { title, author, thumbnail, description, user,publishedDate } = req.body;
  const newFavorite = new Genre({
