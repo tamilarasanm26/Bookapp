@@ -5,8 +5,6 @@ const Genre = require('../models/genre');
 
 router.post('/fav', async (req, res) => {
   const { title, author, thumbnail, description, user,publishedDate } = req.body;
-
-
  const newFavorite = new Genre({
    title,
    author,

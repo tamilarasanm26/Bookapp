@@ -1,13 +1,16 @@
-// GenreCard.jsx
-
 import React from 'react';
 import './home.css';
 import axios from 'axios';
-
+import { useAuth } from '../../contexts/authContext';
 const GenreCard = ({ show, item, onClose }) => {
   if (!show) {
     return null;
   }
+
+  const { currentUser } = useAuth();
+  const email = currentUser.email;
+  const username = email.substring(0, email.indexOf('@'));
+
 
   let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
 
@@ -21,8 +24,11 @@ const GenreCard = ({ show, item, onClose }) => {
         title: item.volumeInfo.title,
         author: item.volumeInfo.authors,
         thumbnail: thumbnail,
+        publishedDate: item.volumeInfo.publishedDate,
         description: item.volumeInfo.description,
+        user: currentUser.displayName || username,
       });
+      console.log(response.data);
       console.log('Favorite saved:', response.data);
     
     } catch (error) {

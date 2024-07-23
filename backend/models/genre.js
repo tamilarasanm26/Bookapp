@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const genreSchema = new mongoose.Schema({
   title: { type: String, required: true },
   authors: { type: [String], required: true },
+  user:{ type: String },
   publisher: { type: String },
   publishedDate: { type: String },
   description: { type: String },
