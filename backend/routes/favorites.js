@@ -36,7 +36,6 @@ router.get('/favorites', async (req, res) => {
   }
 });
 
-// Route to delete a favorite item
 router.delete('/favorites/:id', async (req, res) => {
   const { username } = req.body;  // Extract username from the request body
   try {
