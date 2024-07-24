@@ -35,15 +35,7 @@ const Model = ({ show, item, onClose }) => {
       });
   };
 
-  // const handleShare = () => {
-  //   // Implement share functionality here
-  //   console.log('Share button clicked');
-  // };
-
-  // const handleBuy = () => {
-  //   // Implement buy functionality here
-  //   console.log('Buy button clicked');
-  // };
+ 
 
   return (
     <>
