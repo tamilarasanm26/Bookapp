@@ -1,13 +1,10 @@
-/* home.css */
 
-/* Style for the welcome message */
 .wel {
     text-align: center;
     font-size: 2rem;
     margin-top: 20px;
   }
-  
-  /* Style for the search input and button */
+
   .search {
     display: flex;
     flex-direction: column;
@@ -44,7 +41,7 @@
     background-color: #71cff8;
   }
   
-  /* Media query for devices with a width of 600px or less */
+  
   @media (max-width: 600px) {
     .search-input {
       width: 80%;
