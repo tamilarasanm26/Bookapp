@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
 import axios from 'axios';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/authContext';
 import './button.css';
 import Card from './Card';
+import FeedbackCarousel from './FeedbackCarousel'; // Import the feedback carousel
 import './home.css';
 import QuoteCarousel from './QuoteCarousel'; // Import the quote carousel
-import FeedbackCarousel from './FeedbackCarousel'; // Import the feedback carousel
 
 const Home = () => {
   const { currentUser } = useAuth();
@@ -31,17 +31,21 @@ const Home = () => {
       .catch(err => console.log(err));
   };
 
-  return (
+  // Function to handle key press and trigger searchBook on 'Enter'
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      searchBook();
+    }
+  };
 
+  return (
     <div className="home-container">
       {/* Feedback Carousel in the top left corner */}
       <FeedbackCarousel />
       
-     
       <div className='top-buttons'>
         <Link to="/favorite"><button className='favorite-button'>Favorite</button></Link>&nbsp;
         <Link to="/filter"><button className='genre-button'>Genre</button></Link>
-
       </div>
       
       <h1 className="wel">Welcome, {currentUser.displayName || username}</h1>
@@ -51,6 +55,7 @@ const Home = () => {
           type="text" 
           value={search} 
           onChange={e => setSearch(e.target.value)} 
+          onKeyPress={handleKeyPress}  // Add this line to listen for keypress
           placeholder="Search for a book" 
           className="search-input"
         />
@@ -64,10 +69,9 @@ const Home = () => {
         <div className="container">
           <Card book={bookData} />
         </div>
-       <QuoteCarousel/>
+        <QuoteCarousel/>
       </div>
     </div>
-   
   );
 };
 
