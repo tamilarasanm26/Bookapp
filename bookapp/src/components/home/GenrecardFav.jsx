@@ -6,7 +6,7 @@ const GenrecardFav = () => {
   const [favoriteBooks, setFavoriteBooks] = useState([]);
 
   useEffect(() => {
-    // Fetch favorite books from the server
+    
     axios.get('https://bookapp-qfuf.onrender.com/fav')
       .then(response => {
         setFavoriteBooks(response.data);
@@ -29,7 +29,7 @@ const GenrecardFav = () => {
               <div className='book-info'>
                 <h3>{book.title}</h3>
                 <h4>{book.authors.join(', ')}</h4>
-                {/* <p>{book.description}</p> */}
+             
                 <a href={book.previewLink} target='_blank' rel='noopener noreferrer'>More Info</a>
               </div>
             </div>
