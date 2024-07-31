@@ -54,7 +54,7 @@
     }
   }
   
-  /* Media query for devices with a width greater than 1024px (desktop view) */
+
   @media (min-width: 1024px) {
     .search-button {
       padding: 6px 12px;
