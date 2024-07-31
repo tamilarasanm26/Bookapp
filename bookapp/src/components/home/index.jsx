@@ -13,7 +13,7 @@ const Home = () => {
     return <div>Loading...</div>;
   }
 
-  // Extract username from email
+  // Extract username
   const email = currentUser.email;
   const username = email.substring(0, email.indexOf('@'));
 
