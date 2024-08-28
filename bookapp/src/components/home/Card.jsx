@@ -26,7 +26,6 @@ function Card({ book }) {
                   <p className='amt'>&#8377;{amount}</p>
                 </div>
               </div>
-
               <Model show={show} item={bookItem} onClose={() => setShow(false)} />
             </React.Fragment>
           )
