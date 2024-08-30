@@ -44,7 +44,10 @@ const Home = () => {
       <FeedbackCarousel />
       
       <div className='top-buttons'>
+
         <Link to="/favorite"><button className='favorite-button'>Favorite</button></Link>&nbsp;
+
+       
         <Link to="/filter"><button className='genre-button'>Genre</button></Link>
       </div>
       
