@@ -26,7 +26,7 @@ const Filter = () => {
   return (
     <div>
       <div className='top-buttons'>
-      <Link to="/genrefav">  <button className='favorite-button'>Favorite</button></Link>
+      <Link to="/genrefav">  <button className='favorite-button'>Favorite</button></Link>&nbsp;
        <Link to="/home"> <button className='genre-button'>Home</button></Link>
       </div>
       
