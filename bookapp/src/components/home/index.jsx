@@ -32,7 +32,7 @@ const Home = () => {
   return (
     <div>
       <div className='top-buttons'>
-        <Link to="/favorite"><button className='favorite-button'>Favorite</button></Link>
+        <Link to="/favorite"><button className='favorite-button'>Favorite</button></Link>&nbsp;
         <Link to="/filter"><button className='genre-button'>Genre</button></Link>
       </div>
       <h1 style={{ display: "flex", justifyContent: "center" }} className='wel'>Welcome, {currentUser.displayName || username}</h1>
