@@ -20,8 +20,8 @@ const Filter = () => {
   return (
     <div>
       <div className='top-buttons'>
-        <button className='favorite-button'><Link to="/genrefav">Favorite</Link></button>
-        <button className='genre-button'><Link to="/home">Home</Link></button>
+      <Link to="/genrefav">  <button className='favorite-button'>Favorite</button></Link>
+       <Link to="/home"> <button className='genre-button'>Home</button></Link>
       </div>
       <div className='search'>
         <input 
