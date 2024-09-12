@@ -8,7 +8,8 @@ const favoriteSchema = new mongoose.Schema({
   description: { type: String },
   previewLink: { type: String },
   thumbnail: { type: String },
-  user: {type:String}
+  user: { type: String },
+  likes: { type: Number, default: 0 }  // Add a default value of 0 for likes
 });
 
 module.exports = mongoose.model('Favorite', favoriteSchema);
