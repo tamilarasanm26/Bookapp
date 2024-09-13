@@ -1,0 +1,41 @@
+/* Wrapper for both quote containers */
+.quote-carousel-wrapper {
+    position: absolute;
+    top: 60px; /* Distance from the top of the page */
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Gap between general and book quotes */
+  }
+  
+  /* General quote container */
+  .quote-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 250px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Book quote container */
+  .book-quote-container {
+    background-color: #eef7ff; /* Different background color for book quotes */
+    padding: 20px;
+    border: 1px solid #ddd;
+    width: 250px;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .quote-carousel p {
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+    font-style: italic;
+  }
+  
+  .book-quote-container p {
+    color: #555; /* Slightly different color for book quotes */
+  }
+  

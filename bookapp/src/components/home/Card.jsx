@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import './card.css';
+//import './cards.css';
 // import './home.css';
 import { auth } from '../../firebase/firebase';
 import Model from './Model';

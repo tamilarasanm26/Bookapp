@@ -1,0 +1,21 @@
+/* feedbackCarousel.css */
+
+.feedback-carousel {
+    width: 300px; /* Adjust width as needed */
+    padding: 10px;
+    margin: 10px;
+    position: absolute; /* Absolute positioning */
+    top: 130px; /* Distance from the top */
+    left: 60px; /* Distance from the left */
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-style: italic;
+    z-index: 1000; /* Ensure it appears above other elements */
+  } 
+  
+  .feedback-carousel p {
+    font-size: 16px;
+    color: #333;
+  }
+  
