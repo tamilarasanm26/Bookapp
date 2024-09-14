@@ -10,16 +10,13 @@ const FavoriteBooks = () => {
   const username = email.substring(0, email.indexOf('@'));
 
   useEffect(() => {
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     // Fetch the favorite books including the likes count from the backend
-    axios.get(`http://localhost:5000/api/favorites?username=${username}`)
-=======
-=======
->>>>>>> bf28d2cfb83bc66f113153c2c6375999737a3871
-    
     axios.get(`https://bookapp-qfuf.onrender.com/api/favorites?username=${username}`)
->>>>>>> f8229e6 (Update FavoriteBooks.jsx)
+
+
+    axios.get(`https://bookapp-qfuf.onrender.com/api/favorites?username=${username}`)
+
       .then(response => {
         setFavoriteBooks(response.data);  // Ensure likes is included in the response
       })
@@ -29,7 +26,7 @@ const FavoriteBooks = () => {
   }, [username]);
 
   const handleLike = (title) => {
-    axios.post('http://localhost:5000/api/favorites/like', { title })
+    axios.post('https://bookapp-qfuf.onrender.com/api/favorites/like', { title })
       .then(response => {
         setFavoriteBooks(favoriteBooks.map(book => 
           book.title === title ? { ...book, likes: response.data.likes } : book
@@ -41,7 +38,7 @@ const FavoriteBooks = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5000/api/favorites/${id}`, { data: { username } })
+    axios.delete(`https://bookapp-qfuf.onrender.com/api/favorites/${id}`, { data: { username } })
       .then(response => {
         setFavoriteBooks(favoriteBooks.filter(book => book._id !== id));
       })
@@ -64,7 +61,7 @@ const FavoriteBooks = () => {
                 <h3>{book.title}</h3>
                 <h4>{book.authors.join(', ')}</h4>
                 <p>{book.description}</p>
-<<<<<<< HEAD
+
                 <a href={book.previewLink} target="_blank" rel="noopener noreferrer">More Info</a>
                 
                 {/* Display the current like count */}
@@ -73,13 +70,10 @@ const FavoriteBooks = () => {
                 {/* Button to like the book */}
                 <button onClick={() => handleLike(book.title)}>Like</button>
 
-=======
+
                 <a href={book.previewLink} target='_blank' rel='noopener noreferrer'>More Info</a>
                
-<<<<<<< HEAD
->>>>>>> f8229e6 (Update FavoriteBooks.jsx)
-=======
->>>>>>> bf28d2cfb83bc66f113153c2c6375999737a3871
+
                 <button onClick={() => handleDelete(book._id)}>Delete</button>
               </div>
             </div>
