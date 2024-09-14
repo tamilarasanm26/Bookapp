@@ -10,8 +10,13 @@ const FavoriteBooks = () => {
   const username = email.substring(0, email.indexOf('@'));
 
   useEffect(() => {
+<<<<<<< HEAD
     // Fetch the favorite books including the likes count from the backend
     axios.get(`http://localhost:5000/api/favorites?username=${username}`)
+=======
+    
+    axios.get(`https://bookapp-qfuf.onrender.com/api/favorites?username=${username}`)
+>>>>>>> f8229e6 (Update FavoriteBooks.jsx)
       .then(response => {
         setFavoriteBooks(response.data);  // Ensure likes is included in the response
       })
@@ -56,6 +61,7 @@ const FavoriteBooks = () => {
                 <h3>{book.title}</h3>
                 <h4>{book.authors.join(', ')}</h4>
                 <p>{book.description}</p>
+<<<<<<< HEAD
                 <a href={book.previewLink} target="_blank" rel="noopener noreferrer">More Info</a>
                 
                 {/* Display the current like count */}
@@ -64,6 +70,10 @@ const FavoriteBooks = () => {
                 {/* Button to like the book */}
                 <button onClick={() => handleLike(book.title)}>Like</button>
 
+=======
+                <a href={book.previewLink} target='_blank' rel='noopener noreferrer'>More Info</a>
+               
+>>>>>>> f8229e6 (Update FavoriteBooks.jsx)
                 <button onClick={() => handleDelete(book._id)}>Delete</button>
               </div>
             </div>
