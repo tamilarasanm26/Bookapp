@@ -1,0 +1,36 @@
+.top-buttons {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: 20%;
+  }
+  
+  .favorite-button,
+  .genre-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 60px;
+    
+  }
+  
+  .favorite-button:hover,
+  .genre-button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .favorite-button,
+    .genre-button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  }
+  

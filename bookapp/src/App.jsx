@@ -2,10 +2,14 @@ import Login from "./components/auth/login";
 import Register from "./components/auth/register";
 import Header from "./components/header";
 import Home from "./components/home";
+import Filter from "./components/home/Filter";
+import FavoriteBooks from "./components/home/FavoriteBooks";
 import { AuthProvider } from "./contexts/authContext";
 import { useRoutes } from "react-router-dom";
-
+import GenrecardFav from "./components/home/GenrecardFav";
 import './App.css';
+
+
 
 function App() {
   const routesArray = [
@@ -24,6 +28,18 @@ function App() {
     {
       path: "/home",
       element: <Home />,
+    },
+    {
+      path: "/filter",
+      element: <Filter/>,
+    },
+    {
+      path: "/favorite",
+      element: <FavoriteBooks/>,
+    },
+    {
+      path: "/genrefav",
+      element: <GenrecardFav/>,
     },
   ];
   let routesElement = useRoutes(routesArray);
