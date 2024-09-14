@@ -11,9 +11,12 @@ const FavoriteBooks = () => {
 
   useEffect(() => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     // Fetch the favorite books including the likes count from the backend
     axios.get(`http://localhost:5000/api/favorites?username=${username}`)
 =======
+=======
+>>>>>>> bf28d2cfb83bc66f113153c2c6375999737a3871
     
     axios.get(`https://bookapp-qfuf.onrender.com/api/favorites?username=${username}`)
 >>>>>>> f8229e6 (Update FavoriteBooks.jsx)
@@ -73,7 +76,10 @@ const FavoriteBooks = () => {
 =======
                 <a href={book.previewLink} target='_blank' rel='noopener noreferrer'>More Info</a>
                
+<<<<<<< HEAD
 >>>>>>> f8229e6 (Update FavoriteBooks.jsx)
+=======
+>>>>>>> bf28d2cfb83bc66f113153c2c6375999737a3871
                 <button onClick={() => handleDelete(book._id)}>Delete</button>
               </div>
             </div>

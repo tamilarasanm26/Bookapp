@@ -1,4 +1,4 @@
-// contexts/authContext/index.jsx
+
 
 import React, { useContext, useState, useEffect } from "react";
 import { auth } from "../../firebase/firebase";

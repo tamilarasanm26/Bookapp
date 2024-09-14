@@ -15,7 +15,7 @@ const Home = () => {
     return <div>Loading...</div>;
   }
 
-  // Extract username from email
+  // Extract username
   const email = currentUser.email;
   const username = email.substring(0, email.indexOf('@'));
 
@@ -32,6 +32,7 @@ const Home = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="home-container">
       {/* Feedback Carousel in the top left corner */}
       <FeedbackCarousel />
@@ -39,6 +40,12 @@ const Home = () => {
       <div className="top-buttons">
         <Link to="/favorite"><button className="favorite-button">Favorite</button></Link>
         <Link to="/filter"><button className="genre-button">Genre</button></Link>
+=======
+    <div>
+      <div className='top-buttons'>
+        <Link to="/favorite"><button className='favorite-button'>Favorite</button></Link>&nbsp;
+        <Link to="/filter"><button className='genre-button'>Genre</button></Link>
+>>>>>>> bf28d2cfb83bc66f113153c2c6375999737a3871
       </div>
       
       <h1 className="wel">Welcome, {currentUser.displayName || username}</h1>

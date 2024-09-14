@@ -20,8 +20,13 @@ const Filter = () => {
   return (
     <div>
       <div className='top-buttons'>
+<<<<<<< HEAD
         <Link to="/genrefav"><button className='favorite-button'>Favorite</button></Link>
         <Link to="/home"><button className='genre-button'>Home</button></Link>
+=======
+      <Link to="/genrefav">  <button className='favorite-button'>Favorite</button></Link>&nbsp;
+       <Link to="/home"> <button className='genre-button'>Home</button></Link>
+>>>>>>> bf28d2cfb83bc66f113153c2c6375999737a3871
       </div>
       <div className='search'>
         <input 

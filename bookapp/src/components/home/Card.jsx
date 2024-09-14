@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
+<<<<<<< HEAD
 //import './cards.css';
 // import './home.css';
+=======
+
+import Model from './Model';
+>>>>>>> bf28d2cfb83bc66f113153c2c6375999737a3871
 import { auth } from '../../firebase/firebase';
 import Model from './Model';
 
