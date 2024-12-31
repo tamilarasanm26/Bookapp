@@ -17,7 +17,7 @@ function Genre({ genre }) {
         if(thumbnail!=undefined && amount!=undefined && auth !=undefined)
         {
           return (
-           <>
+           <div>
             <div className='card' onClick={()=>{setShow(true),setItem(item)}}>
               <img src={thumbnail}alt=""/>
               <div>
@@ -29,7 +29,7 @@ function Genre({ genre }) {
             
             {/* <Model show={show} item={bookItem} onClose={()=>setShow(false)}/> */}
             <GenreCard show={show} item={bookItem} onClose={()=>setShow(false)}/>
-           </>
+           </div>
           )
         }
        
